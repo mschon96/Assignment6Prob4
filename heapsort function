@@ -1,0 +1,43 @@
+    public void heapSort(int l, int h){
+        int temp = 0;
+        int tempindex = -1;
+        int count = 0;
+        int swaps = 1;
+
+
+
+        //go through heap array
+        for(int i = 1; i <= currentSize; i++){
+
+            if(array[i] >= l && array[i] <= h){   // in range
+                //first number within range
+                if (temp == 0){
+                    temp = array[i];
+                    tempindex = i;
+                     count ++;
+                }
+
+                //not first number
+                else{
+                      count++;
+                    swaps+=1;
+                    if(array[i] < temp){
+                        array[tempindex] = array[i];
+                        array[i] = temp;
+
+                        tempindex+= (i- tempindex);
+                    }
+                }
+            }
+            else;
+
+
+
+            //                System.out.printf("Temp= %d\nTempIndex= %d\nCount= %d\nSize: %d\n", temp, tempindex, count, currentSize);
+
+        }
+
+    }
+
+
+}
